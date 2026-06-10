@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Simple Task Manager</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styls.css">
+</head>
+<body>
+
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Manage your tasks with effortless simplicity.</h1>
+            <p>TaskFlow is a minimal, elegant tool to help you stay organized, focused, and productive without the clutter.</p>
+            <a href="#app" class="btn-primary">Start Organizing</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Organized workspace">
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Why choose TaskFlow?</h2>
+        <div class="features-grid">
+            <div class="feature-card glass">
+                <div class="icon">🚀</div>
+                <h3>Lightning Fast</h3>
+                <p>No loading screens, no complex setups. Just type and enter to start building your list instantly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">✨</div>
+                <h3>Distraction Free</h3>
+                <p>A clean, focused interface designed specifically to keep your eyes on what matters most: your goals.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">✓</div>
+                <h3>Stay Organized</h3>
+                <p>Easily manage pending and completed tasks. Check things off and watch your productivity soar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task Manager App Section -->
+    <section class="task-app-section" id="app">
+        <div class="app-container glass">
+            <h2>Your Tasks</h2>
+            
+            <!-- CONCEPT: Displaying Async Data -->
+            <div id="quote-container" style="text-align: center; font-style: italic; color: var(--text-muted); margin-bottom: 24px; min-height: 24px;">
+                <!-- The motivational quote will be injected here via API -->
+            </div>
+            
+            <!-- CONCEPT: Form and User Inputs -->
+            <!-- We use a <form> tag to group our inputs. This naturally allows the user to press 'Enter' to submit. -->
+            <!-- The 'id' attributes are critical: they are the "hooks" that our JavaScript will use to connect to these elements. -->
+            <form id="task-form">
+                <input type="text" id="task-input" placeholder="What needs to be done?" required autocomplete="off">
+                <button type="submit" class="btn-submit">Add</button>
+            </form>
+
+            <div class="tasks-wrapper">
+                <div class="task-list-container">
+                    <h3>To Do</h3>
+                    <!-- CONCEPT: DOM Injection Targets -->
+                    <!-- These empty <ul> tags serve as containers. Our JS will inject dynamic HTML elements inside them. -->
+                    <ul id="todo-list" class="task-list">
+                        <!-- Tasks will be injected here via JS -->
+                    </ul>
+                </div>
+
+                <div class="task-list-container">
+                    <h3>Completed</h3>
+                    <ul id="completed-list" class="task-list">
+                        <!-- Completed tasks will go here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 TaskFlow App. Designed for simplicity.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
